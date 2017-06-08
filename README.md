@@ -62,4 +62,8 @@ The example above is pretty minimal but it's actually all you need to get hackin
 1. *Plugins* can extend the core of webpack in any arbitrary way. HtmlWebpackPlugin will generate an index html file using passed in configuration and link the the built bundles in the head. This is convenient for our usecase but also a very useful tool for setting up a deployment strategy (being able to reference dynamically generated bundle names).
 1. *Output* describes the directory and file name for generated bundles.
 
-Notice that since our config is just JS we can do anything you would expect, for instance we're requiring a HTMLWebpackPlugin via an NPM package.
+Notice that since our config is just JS we can do anything you would expect, for instance we're requiring a HTMLWebpackPlugin via an NPM package. We need to remember to add that package:
+
+```shell
+$ yarn add -D html-webpack-plugin
+```
