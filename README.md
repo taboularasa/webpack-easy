@@ -67,3 +67,25 @@ Notice that since our config is just JS we can do anything you would expect, for
 ```shell
 $ yarn add -D html-webpack-plugin
 ```
+
+And lastly we need to create an `index.js` because thats what we specified for our entry:
+
+```shell
+$ mkdir src && touch src/index.js
+```
+
+Now inside that file we can do all the latest JS stuff:
+
+```js
+// index.js
+import * as _ from 'lodash';
+import { bar } from './bar';
+import { foo } from './foo';
+
+console.log(bar('haha'));
+_.map(_.range(0, 4), (x) => console.log(foo(x)));
+```
+
+First we're importing lodash via NPM and assigning it to a reference of `_`
+And then we import some of our own source, `foo` and `bar`. We will write those next.
+Once we have a reference from an import we can use it as if it were local to the current file, as demonstrated on the remaining lines.
