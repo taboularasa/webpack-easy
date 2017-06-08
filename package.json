@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "Your Name <you@example.com>",
   "license": "MIT",
+  "scripts": {
+      "build": "webpack",
+      "watch": "webpack -w"
+  },
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",

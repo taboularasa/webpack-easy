@@ -182,3 +182,47 @@ Note that we'll need to have webpack create a new bundle every time we make chan
 ```shell
 $ yarn webpack -- -w
 ```
+You might have noticed the double dash (`--`) arg and not be familiar. What we're doing here is actually calling `yarn` with the argument `webpack` which it takes to mean, look in the NPM `.bin` directory for an executable called `webpack`, everything that comes after the double dash is forwarded along to the referenced executable. So all said, yarn epxands this command to:
+
+```shell
+$ /full/path/to/project/webpack-easy/node_modules/.bin/webpack -w
+```
+
+Many people will alias these commands in their `package.json` under the `scripts` field:
+
+```js
+// ./package.json
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+      "build": "webpack",
+      "watch": "webpack -w"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "html-webpack-plugin": "^2.28.0",
+    "webpack": "^2.6.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
+```
+
+`package.json` will shim `node_modules/.bin` into your path so you can reference executables there by name instead of absolute path.
+
+Adding those script entries allows you to build like so:
+
+```shell
+$ yarn build
+```
+
+And watch like so:
+
+```shell
+$ yarn watch
+```
