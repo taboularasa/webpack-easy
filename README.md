@@ -131,3 +131,42 @@ Also in our webpack config we reference Babel Loader and we haven't yet installe
 ```shell
 $ yarn add -D babel-loader babel-core
 ```
+
+Now that we have some code, we can tell webpack to look at our config and then do what it takes to transform our source into a bundled JS file complete with an `index.html` file all linked up and drop those into our `dist` directory.
+
+```shell
+$ yarn webpack
+```
+
+You might see output that looks like this:
+
+```shell
+yarn webpack v0.21.3
+$ "/Users/david/Desktop/webpack-easy/node_modules/.bin/webpack"
+[BABEL] Note: The code generator has deoptimised the styling of "/Users/david/Desktop/webpack-easy/node_modules/lodash/lodash.js" as it exceeds the max of "500KB".
+[BABEL] Note: The code generator has deoptimised the styling of "/Users/david/Desktop/webpack-easy/node_modules/lodash/lodash.js" as it exceeds the max of "500KB".
+Hash: 98ac4bdbd813bada7774
+Version: webpack 2.6.1
+Time: 2697ms
+     Asset       Size  Chunks                    Chunk Names
+ bundle.js    1.54 MB       0  [emitted]  [big]  main
+index.html  182 bytes          [emitted]
+   [0] ./~/lodash/lodash.js 477 kB {0} [built]
+   [1] ./src/bar.js 57 bytes {0} [built]
+   [2] ./src/foo.js 57 bytes {0} [built]
+   [3] (webpack)/buildin/global.js 487 bytes {0} [built]
+   [4] (webpack)/buildin/module.js 500 bytes {0} [built]
+   [5] ./src/index.js 161 bytes {0} [built]
+Child html-webpack-plugin for "index.html":
+       [0] ./~/lodash/lodash.js 477 kB {0} [built]
+       [1] (webpack)/buildin/global.js 487 bytes {0} [built]
+       [2] (webpack)/buildin/module.js 500 bytes {0} [built]
+       [3] ./~/html-webpack-plugin/lib/loader.js!./~/html-webpack-plugin/default_index.ejs 538 bytes {0} [built]
+✨  Done in 3.69s.
+```
+
+You'll want to ignore the `dist` directory:
+
+```shell
+$ echo "dist" >> .gitignore
+```
