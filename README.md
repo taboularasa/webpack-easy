@@ -176,3 +176,9 @@ Now we just need to open the `index.html` file in a browser and we're on our way
 ```shell
 $ open dist/index.html
 ```
+
+Note that we'll need to have webpack create a new bundle every time we make changes to the source. Some people might prefer to have that happen automatically. Theres all kinds of fancy options automating that work, the simplest one is built into webpack:
+
+```shell
+$ yarn webpack -- -w
+```
