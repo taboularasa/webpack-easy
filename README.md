@@ -21,3 +21,9 @@ When managing JS dependencies with NPM and Yarn, you're going to be downloading 
 ```shell
 $ echo 'node_modules' > .gitignore
 ```
+
+Add webpack to your project as a development dependency
+
+```shell
+$ yarn add -D webpack
+```
