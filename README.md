@@ -170,3 +170,9 @@ You'll want to ignore the `dist` directory:
 ```shell
 $ echo "dist" >> .gitignore
 ```
+
+Now we just need to open the `index.html` file in a browser and we're on our way!
+
+```shell
+$ open dist/index.html
+```
