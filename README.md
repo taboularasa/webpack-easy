@@ -89,3 +89,36 @@ _.map(_.range(0, 4), (x) => console.log(foo(x)));
 First we're importing lodash via NPM and assigning it to a reference of `_`
 And then we import some of our own source, `foo` and `bar`. We will write those next.
 Once we have a reference from an import we can use it as if it were local to the current file, as demonstrated on the remaining lines.
+
+Now add the other files:
+
+```shell
+$ touch src/foo.js
+```
+
+Add the following content into foo:
+
+```js
+// foo.js
+let foo = (x) => `foo ${x}`;
+
+export { foo };
+```
+
+Create bar:
+
+```shell
+$ touch src/bar.js
+```
+
+And add this into bar:
+
+```js
+// bar.js
+let bar = (x) => `bar ${x}`;
+
+export { bar };
+```
+
+If we want to organize our code by files it's as easy as `import` and `export`
+Incidentally this is the underpinning of how webpack works. Starting from an entry point, webpack recursively traverses through every import statement to build a dependency graph that will eventually be concatenated (after processing) into a single file. The bundle.
