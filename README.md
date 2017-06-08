@@ -228,3 +228,14 @@ $ yarn watch
 ```
 
 And that's all you need to get going. Obviously things are going to get complicated in a longer lived production application. But for weekend hacking, things can be pretty sweet!
+
+Further reading:
+
+- https://www.what-problem-does-it-solve.com/webpack/index.html
+  - Dave Copeland details webpack setup from scratch with a focus on simplicity. It was the inspiration for this repo. You could think of what I have here as the tl;dr of Dave's writeup.
+- https://webpack.js.org/
+  - The official docs are excellent
+- https://github.com/webpack/webpack/issues
+  - Lots of undocumented info can be found here
+- https://egghead.io/courses/using-webpack-for-production-javascript-applications
+  - Not free but good videos
