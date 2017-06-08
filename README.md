@@ -125,3 +125,9 @@ Notice that we're referencing lodash as an NPM dependency in `index.js`, we need
 ```shell
 $ yarn add lodash
 ```
+
+Also in our webpack config we reference Babel Loader and we haven't yet installed that, which also requires babel-core:
+
+```shell
+$ yarn add -D babel-loader babel-core
+```
