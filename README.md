@@ -120,5 +120,8 @@ let bar = (x) => `bar ${x}`;
 export { bar };
 ```
 
-If we want to organize our code by files it's as easy as `import` and `export`
-Incidentally this is the underpinning of how webpack works. Starting from an entry point, webpack recursively traverses through every import statement to build a dependency graph that will eventually be concatenated (after processing) into a single file. The bundle.
+Notice that we're referencing lodash as an NPM dependency in `index.js`, we need to remember to add that package as a runtime dependency:
+
+```shell
+$ yarn add lodash
+```
