@@ -226,3 +226,5 @@ And watch like so:
 ```shell
 $ yarn watch
 ```
+
+And that's all you need to get going. Obviously things are going to get complicated in a longer lived production application. But for weekend hacking, things can be pretty sweet!
